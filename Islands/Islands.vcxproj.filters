@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Grid.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="IslandAlgorithm.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Island.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>MainWindow\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Presenter.cpp">
+      <Filter>MainWindow\Presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MainWindow">
+      <UniqueIdentifier>{dcd98a89-2c4c-4b94-a41d-1ed8ac802536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{b54672db-910b-45d6-9f65-f7de0f7f221b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainWindow\View">
+      <UniqueIdentifier>{25d2ecbc-5628-441b-980e-c54c97040e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainWindow\Presenter">
+      <UniqueIdentifier>{b62d5bfa-4681-4dae-ba8e-0e2c0fcd6ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{5af4a3cd-78b0-4d11-9515-8bd79da5052f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Grid.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="IslandAlgorithm.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Island.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="View.ui">
+      <Filter>MainWindow\View</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="View.h">
+      <Filter>MainWindow\View</Filter>
+    </QtMoc>
+    <QtMoc Include="Presenter.h">
+      <Filter>MainWindow\Presenter</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="View.qrc">
+      <Filter>MainWindow\View</Filter>
+    </QtRcc>
+  </ItemGroup>
+</Project>
