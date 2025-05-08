@@ -2,26 +2,29 @@
 
 #include <QPainter>
 
-QImage render(const QSize& gridSize, const QSize& imageSize, const std::vector<ColoredIsland>& islands)
+namespace Renderer
 {
-	QImage image(imageSize, QImage::Format_RGB888);
-	image.fill(Qt::white);
-
-	const float cellWidth = static_cast<float>((imageSize.width())) / gridSize.width();
-	const float cellHeight = static_cast<float>((imageSize.height())) / gridSize.height();
-	const QSizeF cellSize(cellWidth, cellHeight);
-	
-	QPainter painter(&image);
-
-	for (auto& [island, color] : islands)
+	QImage render(const QSize& gridSize, const QSize& imageSize, const std::vector<ColoredIsland>& islands)
 	{
-		painter.setBrush(QBrush(color));
-		for (auto& position : island.positions)
+		QImage image(imageSize, QImage::Format_RGB888);
+		image.fill(Qt::white);
+
+		const float cellWidth = static_cast<float>((imageSize.width())) / gridSize.width();
+		const float cellHeight = static_cast<float>((imageSize.height())) / gridSize.height();
+		const QSizeF cellSize(cellWidth, cellHeight);
+
+		QPainter painter(&image);
+
+		for (auto& [island, color] : islands)
 		{
-			QPointF cellPosition(position.x() * cellSize.toSize().width(), position.y() * cellSize.toSize().height());
-			painter.drawRect(QRect(cellPosition.toPoint(), cellSize.toSize()));
+			painter.setBrush(QBrush(color));
+			for (auto& position : island.positions)
+			{
+				QPointF cellPosition(position.x() * cellSize.toSize().width(), position.y() * cellSize.toSize().height());
+				painter.drawRect(QRect(cellPosition.toPoint(), cellSize.toSize()));
+			}
 		}
+
+		return image;
 	}
-	
-	return image;
-}
+} // namespace Renderer
